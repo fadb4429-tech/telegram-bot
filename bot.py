@@ -5,7 +5,7 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Cont
 # CONFIGURATION
 # ============================================================
 
-TOKEN = "8768287302:AAFz0OX4-uumX-NUXpSD1C-SZTWeb5rZUqs"
+TOKEN = "8768287302:AAF1qxcuSm1OAt3lx_XHx_sdlZrX2isdv00"
 
 # Remplace ces liens par les liens de TES canaux.
 CANAL_ANIME = "https://t.me/TON_CANAL_ANIME"
