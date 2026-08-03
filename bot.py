@@ -44,19 +44,17 @@ def menu_anime():
     ])
 
 
-def menu_jeux_pc():
+def menu_fiche_pc(jeu):
+    liens = {
+        "gta": "https://ankergames.net/game/grand-theft-auto-v",
+        "watchdogs": "https://ankergames.net/game/watch-dogs",
+        "dmc": "https://ankergames.net/game/devil-may-cry-5",
+        "maxpayne": "https://ankergames.net/game/max-payne-3",
+    }
+
     return InlineKeyboardMarkup([
-        [
-            InlineKeyboardButton("🎮 GTA V", callback_data="pc_gta"),
-            InlineKeyboardButton("🕵️ Watch Dogs", callback_data="pc_watchdogs")
-        ],
-        [
-            InlineKeyboardButton("⚔️ Devil May Cry", callback_data="pc_dmc"),
-            InlineKeyboardButton("💀 Max Payne", callback_data="pc_maxpayne")
-        ],
-        [
-            InlineKeyboardButton("🔙 Retour", callback_data="accueil")
-        ]
+        [InlineKeyboardButton("💾 Télécharger", url=liens[jeu])],
+        [InlineKeyboardButton("🔙 Retour", callback_data="jeux_pc")]
     ])
 
 
@@ -203,7 +201,7 @@ async def boutons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "📦 Taille : à compléter\n"
             "⚙️ Configuration : à compléter",
             parse_mode="HTML",
-            reply_markup=menu_fiche_pc()
+            reply_markup=menu_fiche_pc("gta")
         )
 
     elif choix == "pc_watchdogs":
@@ -213,7 +211,7 @@ async def boutons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "📦 Taille : à compléter\n"
             "⚙️ Configuration : à compléter",
             parse_mode="HTML",
-            reply_markup=menu_fiche_pc()
+            reply_markup=menu_fiche_pc("watchdogs")
         )
 
     elif choix == "pc_dmc":
@@ -223,7 +221,7 @@ async def boutons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "📦 Taille : à compléter\n"
             "⚙️ Configuration : à compléter",
             parse_mode="HTML",
-            reply_markup=menu_fiche_pc()
+            reply_markup=menu_fiche_pc("dmc")
         )
 
     elif choix == "pc_maxpayne":
@@ -233,7 +231,7 @@ async def boutons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "📦 Taille : à compléter\n"
             "⚙️ Configuration : à compléter",
             parse_mode="HTML",
-            reply_markup=menu_fiche_pc()
+            reply_markup=menu_fiche_pc("maxpayne")
         )
 
     # ---------------- CANAUX ----------------
