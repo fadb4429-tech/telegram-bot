@@ -195,13 +195,22 @@ async def boutons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     elif choix == "pc_gta":
-        await query.edit_message_text(
-            "🎮 <b>GTA V</b>\n\n"
-            "💻 Plateforme : PC\n"
-            "📦 Taille : à compléter\n"
-            "⚙️ Configuration : à compléter",
-            parse_mode="HTML",
-            reply_markup=menu_fiche_pc("gta")
+        await context.bot.send_photo(
+    chat_id=query.message.chat.id,
+    photo="content://media/external/downloads/362",
+    caption=(
+        "🎮 <b>GTA V</b>\n\n"
+        "📦 Taille : 114 Go\n\n"
+        "💻 <b>Configuration minimale</b>\n"
+        "• Windows 10 64 bits\n"
+        "• Intel Core i5-3470\n"
+        "• 8 Go RAM\n"
+        "• GTX 660 2 Go\n"
+        "• 120 Go d'espace libre"
+    ),
+    parse_mode="HTML",
+    reply_markup=menu_fiche_pc("gta")
+        
         )
 
     elif choix == "pc_watchdogs":
