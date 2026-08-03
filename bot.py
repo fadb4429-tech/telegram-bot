@@ -71,30 +71,18 @@ def menu_canaux():
 # ============================================================
 # MENUS DE FICHES
 # ============================================================
+def menu_fiche_anime(anime):
+    liens = {
+        "naruto": "https://t.me/Naruto_vf_f",
+        "berserk": "https://t.me/komijokaa",
+        "onepiece": "https://t.me/one_piece_otaku",
+        "bleach": "https://t.me/BLEACH_TV_VF",
+    }
 
-def menu_fiche_anime(retour="anime"):
     return InlineKeyboardMarkup([
-        [
-            InlineKeyboardButton("🇫🇷 Français", callback_data="anime_fr"),
-            InlineKeyboardButton("🇯🇵 VOSTFR", callback_data="anime_vostfr")
-        ],
-        [
-            InlineKeyboardButton("🔙 Retour", callback_data=retour)
-        ]
+        [InlineKeyboardButton("▶️ Regarder maintenant", url=liens[anime])],
+        [InlineKeyboardButton("🔙 Retour", callback_data="anime")]
     ])
-
-
-def menu_fiche_pc(retour="jeux_pc"):
-    return InlineKeyboardMarkup([
-        [
-            InlineKeyboardButton("💾 Télécharger", url="https://example.com")
-        ],
-        [
-            InlineKeyboardButton("🔙 Retour", callback_data=retour)
-        ]
-    ])
-
-
 # ============================================================
 # /start
 # ============================================================
@@ -147,7 +135,7 @@ async def boutons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "📦 Épisodes : à compléter\n"
             "🌐 Langue : choisis ci-dessous 👇",
             parse_mode="HTML",
-            reply_markup=menu_fiche_anime()
+            reply_markup=menu_fiche_anime("naruto")
         )
 
     elif choix == "anime_berserk":
@@ -156,7 +144,7 @@ async def boutons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "📺 Série : Berserk\n"
             "🌐 Langue : choisis ci-dessous 👇",
             parse_mode="HTML",
-            reply_markup=menu_fiche_anime()
+            reply_markup=menu_fiche_anime("berserk")
         )
 
     elif choix == "anime_onepiece":
@@ -165,7 +153,7 @@ async def boutons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "📺 Série : One Piece\n"
             "🌐 Langue : choisis ci-dessous 👇",
             parse_mode="HTML",
-            reply_markup=menu_fiche_anime()
+            reply_markup=menu_fiche_anime("onepiece")
         )
 
     elif choix == "anime_bleach":
@@ -174,7 +162,7 @@ async def boutons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "📺 Série : Bleach\n"
             "🌐 Langue : choisis ci-dessous 👇",
             parse_mode="HTML",
-            reply_markup=menu_fiche_anime()
+            reply_markup=menu_fiche_anime("bleach")
         )
 
     elif choix == "anime_fr":
