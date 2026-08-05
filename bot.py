@@ -18,7 +18,7 @@ import os
 # CONFIGURATION
 # ==========================================================
 
-TOKEN = os.getenv("TOKEN")
+TOKEN = "8768287302:AAF1qxcuSm1OAt3lx_XHx_sdlZrX2isdv00"
 
 REPO = "fadb4429-tech/telegram-bot"
 BRANCH = "main"
