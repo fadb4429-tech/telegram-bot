@@ -18,7 +18,8 @@ import os
 # CONFIGURATION
 # ==========================================================
 
-TOKEN = "8768287302:AAF1qxcuSm1OAt3lx_XHx_sdlZrX2isdv00"
+TOKEN = os.getenv("TOKEN")
+
 
 REPO = "fadb4429-tech/telegram-bot"
 BRANCH = "main"
@@ -401,7 +402,7 @@ if __name__ == "__main__":
 # ============================================================
 
 def main():
-    if TOKEN == "8768287302:AAF1qxcuSm1OAt3lx_XHx_sdlZrX2isdv00":
+    if TOKEN = os.getenv("TOKEN"):
         print("❌ Mets ton token BotFather dans la variable TOKEN.")
         return
 
