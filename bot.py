@@ -402,7 +402,7 @@ if __name__ == "__main__":
 # ============================================================
 
 def main():
-    if TOKEN = os.getenv("TOKEN"):
+    if TOKEN ="8768287302:AAF1qxcuSm1OAt3lx_XHx_sdlZrX2isdv00":
         print("❌ Mets ton token BotFather dans la variable TOKEN.")
         return
 
