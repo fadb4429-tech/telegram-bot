@@ -80,10 +80,10 @@ JEUX = {
         "description":
         "⚽️ Efootball26\n\n"
 
-        "Processor (CPU): Intel Core i5-2300 / AMD FX-4350"
+        "Processor (CPU): Intel Core i5-2300 / AMD FX-4350\n"
         
-        "Memory (RAM): 8 GB RAM"
-        "Storage: 70 GB available space"
+        "Memory (RAM): 8 GB RAM\n"
+        "Storage: 70 GB available space\n"
 
     },
 
