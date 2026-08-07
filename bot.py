@@ -348,17 +348,23 @@ async def boutons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif choix == "jeux":
 
-        await query.edit_message_text(
-            "🎮 Jeux PC",
-            reply_markup=menu_jeux()
-        )
+    await query.message.delete()
+
+    await context.bot.send_message(
+        chat_id=query.message.chat.id,
+        text="🎮 Jeux PC\n\nChoisis un jeu 👇",
+        reply_markup=menu_jeux()
+    )
 
     elif choix == "anime":
 
-        await query.edit_message_text(
-            "🎌 Animés",
-            reply_markup=menu_anime()
-        )
+    await query.message.delete()
+
+    await context.bot.send_message(
+        chat_id=query.message.chat.id,
+        text="🎌 Animés\n\nChoisis un animé 👇",
+        reply_markup=menu_anime()
+    )
 
     elif choix == "manga":
 
