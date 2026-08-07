@@ -69,6 +69,25 @@ JEUX = {
 
     },
 
+    "efootball": {
+
+        "nom": "Efootball 26",
+
+        "image": BASE_IMAGE + "efootball.jpg",
+
+        "url": "https://app.notion.com/p/PES-2017-2026-installation-33d2a32ee60680469bc2c2d8cc9b1a04"
+
+        "description"
+        "⚽️ Efootball26\n\n"
+
+        "Processor (CPU): Intel Core i5-2300 / AMD FX-4350"
+        
+        "Memory (RAM): 8 GB RAM"
+        "Storage: 70 GB available space"
+
+    },
+
+    
     "dmc": {
 
         "nom": "Devil May Cry 5",
