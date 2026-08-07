@@ -392,29 +392,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-# ============================================================
-# LANCEMENT
-# ============================================================
-
-def main():
-    if TOKEN ="8768287302:AAF1qxcuSm1OAt3lx_XHx_sdlZrX2isdv00":
-        print("❌ Mets ton token BotFather dans la variable TOKEN.")
-        return
-
-    app = Application.builder().token(TOKEN).build()
-
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(CallbackQueryHandler(boutons))
-
-    print("🤖 Bot démarré !")
-    app.run_polling()
-
-
-if __name__ == "__main__":
-    main()
-
