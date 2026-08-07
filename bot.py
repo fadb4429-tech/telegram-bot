@@ -199,6 +199,8 @@ def menu_manga():
 
 async def afficher_jeu(query, context, jeu_id):
 
+    await query.message.delete()
+    
     jeu = JEUX[jeu_id]
 
     clavier = InlineKeyboardMarkup([
@@ -331,68 +333,54 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # ==========================================================
 
 async def boutons(update: Update, context: ContextTypes.DEFAULT_TYPE):
-
     query = update.callback_query
     await query.answer()
 
     choix = query.data
-    
-  
-    if choix == "accueil":
 
+    if choix == "accueil":
         await query.edit_message_text(
-            "🎌 Bienvenue sur Anime Games Hub\n\n"
-            "👇 Choisis une catégorie :",
+            text="🎌 Bienvenue sur Anime Games Hub\n\n👇 Choisis une catégorie :",
             reply_markup=menu_principal()
         )
 
     elif choix == "jeux":
-
-    await query.message.delete()
-
-    await context.bot.send_message(
-        chat_id=query.message.chat.id,
-        text="🎮 Jeux PC\n\nChoisis un jeu 👇",
-        reply_markup=menu_jeux()
-    )
+        await query.edit_message_text(
+            text="🎮 Jeux PC\n\nChoisis un jeu 👇",
+            reply_markup=menu_jeux()
+        )
 
     elif choix == "anime":
-
-    await query.message.delete()
-
-    await context.bot.send_message(
-        chat_id=query.message.chat.id,
-        text="🎌 Animés\n\nChoisis un animé 👇",
-        reply_markup=menu_anime()
-    )
+        await query.edit_message_text(
+            text="🎌 Animés\n\nChoisis un animé 👇",
+            reply_markup=menu_anime()
+        )
 
     elif choix == "manga":
-
         await query.edit_message_text(
-            "📚 Mangas",
+            text="📚 Mangas\n\nChoisis un manga 👇",
             reply_markup=menu_manga()
         )
 
     elif choix == "about":
-
         await query.edit_message_text(
-            "🤖 Anime Games Hub\n\n"
-            "Version : 2.0\n"
-            "Développé avec Python ❤️\n\n"
-            "🎮 Jeux PC\n"
-            "🎌 Animés\n"
-            "📚 Mangas",
+            text=(
+                "🤖 Anime Games Hub\n\n"
+                "Version : 2.0\n"
+                "Développé avec Python ❤️\n\n"
+                "🎮 Jeux PC\n"
+                "🎌 Animés\n"
+                "📚 Mangas"
+            ),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("⬅ Retour", callback_data="accueil")]
             ])
         )
 
     elif choix in JEUX:
-
         await afficher_jeu(query, context, choix)
 
     elif choix in ANIMES:
-
         await afficher_anime(query, context, choix)
 
 
